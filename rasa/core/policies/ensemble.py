@@ -195,6 +195,10 @@ class DefaultPolicyPredictionEnsemble(PolicyPredictionEnsemble, GraphComponent):
         for idx, prediction in enumerate(predictions):
             policy_events += prediction.events
 
+            logger.debug(
+                f"{prediction.policy_name} has a max confidence of {prediction.max_confidence:.2f}."
+            )
+
             # No user predictions (e.g. happy path loop predictions)
             # overrule all other predictions.
             if prediction.is_no_user_prediction != is_no_user_prediction:
