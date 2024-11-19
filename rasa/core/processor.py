@@ -724,6 +724,7 @@ class MessageProcessor:
                 message=Message({TEXT: message.text})
             )
             # Intent is not explicitly present. Pass message to graph.
+            message.tracker = tracker
             if msg.data.get(INTENT) is None:
                 parse_data = self._parse_message_with_graph(
                     message, tracker, only_output_properties
