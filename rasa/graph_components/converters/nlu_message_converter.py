@@ -41,6 +41,7 @@ class NLUMessageConverter(GraphComponent):
                     TEXT: message.text,
                     "message_id": message.message_id,
                     "metadata": message.metadata,
+                    "tracker" : message.tracker
                 },
                 output_properties={TEXT_TOKENS},
             )
