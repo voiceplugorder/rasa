@@ -81,6 +81,7 @@ class UserMessage:
         self.parse_data = parse_data
         self.metadata = metadata
         self.headers = kwargs.get("headers", None)
+        self.tracker = None
 
 
 def register(
